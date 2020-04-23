@@ -1,2 +1,9 @@
 <p>ore-table works!</p>
-<div *ngFor="let item in testingData|async">{{item}}</div>"
+<table class="table table-striped">
+    <tr *ngFor="let item of testingData|async">
+        <td *ngFor="let col of item | keyvalue">{{col.key}}:<span *ngIf="col.key == 'description'" [innerHTML]="col.value"></span><span *ngIf="col.key != 'description'">{{col.value}}</span></td>
+    </tr>
+</table>
+<ul>
+<li *ngFor="let item of testingData|async">{{item | json}}</li>
+</ul>

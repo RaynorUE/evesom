@@ -20,9 +20,9 @@ export class OreTableComponent implements OnInit {
 
   }
 
-  testing(): Observable<object>{
+  testing(): Observable<Array<object>>{
 
-    return this.http.get('/api/ore-table/testing')
+    return this.http.get<Array<Object>>('/api/ore-table/testing')
   }
 
 }
