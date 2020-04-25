@@ -5,6 +5,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { OreTableComponent } from './utilities/mining/ore-table/ore-table.component';
 import { HttpClientModule } from '@angular/common/http';
+import { APICoreService } from './services/api/apicore.service';
+import { OreTableService } from './services/api/utilities/ore-table.service';
 
 @NgModule({
   declarations: [
@@ -17,7 +19,7 @@ import { HttpClientModule } from '@angular/common/http';
     HttpClientModule,
     NgbModule
   ],
-  providers: [],
+  providers: [APICoreService, OreTableService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
