@@ -1,3 +1,4 @@
+
 <ul ngbNav #nav="ngbNav" class="nav-tabs">
   <li ngbNavItem>
     <a ngbNavLink>First</a>
@@ -8,4 +9,6 @@
     <ng-template ngbNavContent>Second content</ng-template>
   </li>
 </ul>
-<div [ngbNavOutlet]="nav"></div>
+<div class="container-fluid">
+<div class="row col-xs-12" [ngbNavOutlet]="nav"></div>
+</div>
