@@ -1,9 +1,13 @@
-<p>ore-table works!</p>
-<table class="table table-dark table-striped">
-    <thead></thead>
-    <tbody>
-    <tr *ngFor="let item of testingData|async">
-        <td *ngFor="let col of item | keyvalue">{{col.key}}:<!--<span *ngIf="col.key == 'description'" [innerHTML]="col.value"></span>--><span *ngIf="col.key != 'description'">{{col.value}}</span></td>
-    </tr>
-</tbody>
-</table>
+<h1>Ore Table</h1>
+<div *ngIf="oreTable">
+    <table class="table table-dark table-striped">
+        <thead>
+            <th *ngFor="let header of oreTable.headers">{{header.name}}</th>
+        </thead>
+        <tbody>
+        <tr *ngFor="let row of oreTable.rows">
+            <td *ngFor="let col of row; let i=index"><span *ngIf="i == 0">{{col.name}}</span><span *ngIf="i > 0">{{col}}</span></td>
+        </tr>
+    </tbody>
+    </table>
+</div>
